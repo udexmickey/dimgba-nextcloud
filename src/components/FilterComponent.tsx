@@ -1,12 +1,21 @@
+// Importing necessary components and libraries
 import React from "react";
-import { TextField, Grid, Button, MenuItem, FormControl, InputLabel } from "@mui/material";
+import { 
+  TextField, 
+  Grid, 
+  Button, 
+  MenuItem, 
+  FormControl, 
+  InputLabel 
+} from "@mui/material";
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
+// Defining the FilterComponent functional component
 interface FilterComponentProps {
-  continentFilter: string;
-  setContinentFilter: React.Dispatch<React.SetStateAction<string>>;
-  hasStatesFilter: boolean | "";
-  setHasStatesFilter: React.Dispatch<React.SetStateAction<boolean | "">>;
+  continentFilter: string; // Prop for continent filter value
+  setContinentFilter: React.Dispatch<React.SetStateAction<string>>; // Function to set continent filter value
+  hasStatesFilter: boolean | ""; // Prop for hasStates filter value
+  setHasStatesFilter: React.Dispatch<React.SetStateAction<boolean | "">>; // Function to set hasStates filter value
 }
   
 const FilterComponent: React.FC<FilterComponentProps> = ({
@@ -20,8 +29,8 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
       <Grid item>
         <TextField
           label="Continent Filter"
-          value={continentFilter}
-          onChange={(e) => setContinentFilter(e.target.value)}
+          value={continentFilter} // Value of the continent filter input
+          onChange={(e) => setContinentFilter(e.target.value)} // Function to handle changes in the continent filter input
           style={{ minWidth: "150px" }}
         />
       </Grid>
@@ -31,10 +40,10 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={hasStatesFilter as any}
+          value={hasStatesFilter as any} // Value of the hasStates filter select input
           label="Has State"
           style={{ minWidth: "150px" }}
-          onChange={(e: SelectChangeEvent) => setHasStatesFilter(e.target.value as boolean | "")}
+          onChange={(e: SelectChangeEvent) => setHasStatesFilter(e.target.value as boolean | "")} // Function to handle changes in the hasStates filter select input
         >
           <MenuItem value={''}>All</MenuItem>
           <MenuItem value={true as any}>Yes</MenuItem>
@@ -47,8 +56,8 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
         <Button
           variant="outlined"
           onClick={() => {
-            setContinentFilter("");
-            setHasStatesFilter("");
+            setContinentFilter(""); // Function to clear the continent filter
+            setHasStatesFilter(""); // Function to clear the hasStates filter
           }}
           style={{ minWidth: "150px" }}
         >

@@ -7,6 +7,7 @@ import "./styles/App.css";
 import FilterComponent from "./components/FilterComponent";
 
 const App: React.FC = () => {
+  // Initializing state variables
   // eslint-disable-next-line
   const [data, setData] = useState<{ countries: Country[] }>(jsonData);
   const [continentFilter, setContinentFilter] = useState<string>("");
