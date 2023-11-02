@@ -81,5 +81,3 @@ src/
 
 This project is licensed under the [MIT License](LICENSE).
 ```
-
-In this `README.md` file, I've provided sections for installation, usage, features, screenshots, technologies used, folder structure, and license. You can customize it further based on your specific application. Additionally, you can add more sections or details as needed. Remember to replace placeholders like `your-username` and `dimgba-nextcloud` with your actual repository information.
