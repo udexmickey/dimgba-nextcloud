@@ -15,7 +15,7 @@ const App: React.FC = () => {
   const [sortOrder, setSortOrder] = useState<"ASC" | "DESC" | "">("");
 
   return (
-    <Container maxWidth="lg">
+    <Container>
       <Typography variant="h4" component="h1" gutterBottom marginTop={"2rem"}>
         Country Data Table
       </Typography>
