@@ -1,4 +1,3 @@
-```markdown
 # Country Data App
 
 This web application displays information about different countries, including their names, continents, whether they have states, country codes, and international names. Users can filter the data by continent and whether the country has states. Additionally, they can sort the table by name in ascending or descending order.
@@ -11,7 +10,6 @@ This web application displays information about different countries, including t
 - [Screenshots](#screenshots)
 - [Technologies Used](#technologies-used)
 - [Folder Structure](#folder-structure)
-- [License](#license)
 
 ## Installation
 
@@ -75,9 +73,4 @@ src/
 |-- countryData.json
 |-- index.tsx
 |-- ...
-```
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 ```

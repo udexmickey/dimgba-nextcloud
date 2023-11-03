@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import jsonData from "./countryData.json";
 import Country from "./utils/types/Country.type";
 import TableComponent from "./components/Table";
-import { AppBar, Container, Stack, Toolbar, Typography } from "@mui/material";
-import "./styles/App.css";
+import { Container, Stack, Typography } from "@mui/material";
 import FilterComponent from "./components/FilterComponent";
+import "./styles/App.css";
 
 const App: React.FC = () => {
-  // Initializing state variables
   // eslint-disable-next-line
   const [data, setData] = useState<{ countries: Country[] }>(jsonData);
   const [continentFilter, setContinentFilter] = useState<string>("");
@@ -17,14 +16,7 @@ const App: React.FC = () => {
 
   return (
     <Container maxWidth="lg">
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Country Data App
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Typography variant="h4" component="h1" gutterBottom>
+      <Typography variant="h4" component="h1" gutterBottom marginTop={"2rem"}>
         Country Data Table
       </Typography>
       <Typography variant="body1" color="text.secondary" paragraph>

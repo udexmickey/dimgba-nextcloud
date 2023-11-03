@@ -1,23 +1,15 @@
-// Importing necessary components and libraries
 import React from "react";
-import { 
-  TextField, 
-  Grid, 
-  Button, 
-  MenuItem, 
-  FormControl, 
-  InputLabel 
+import {
+  TextField,
+  Grid,
+  Button,
+  MenuItem,
+  FormControl,
+  InputLabel,
 } from "@mui/material";
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { FilterComponentProps } from "../utils/types/filter.types";
 
-// Defining the FilterComponent functional component
-interface FilterComponentProps {
-  continentFilter: string; // Prop for continent filter value
-  setContinentFilter: React.Dispatch<React.SetStateAction<string>>; // Function to set continent filter value
-  hasStatesFilter: boolean | ""; // Prop for hasStates filter value
-  setHasStatesFilter: React.Dispatch<React.SetStateAction<boolean | "">>; // Function to set hasStates filter value
-}
-  
 const FilterComponent: React.FC<FilterComponentProps> = ({
   continentFilter,
   setContinentFilter,
@@ -25,7 +17,7 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
   setHasStatesFilter,
 }) => {
   return (
-    <Grid container spacing={2} alignItems="flex-end" justifyContent={'left'}>
+    <Grid container spacing={2} alignItems="flex-end" justifyContent={"left"}>
       <Grid item>
         <TextField
           label="Continent Filter"
@@ -34,23 +26,25 @@ const FilterComponent: React.FC<FilterComponentProps> = ({
           style={{ minWidth: "150px" }}
         />
       </Grid>
-      <Grid item >
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Has State</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={hasStatesFilter as any} // Value of the hasStates filter select input
-          label="Has State"
-          style={{ minWidth: "150px" }}
-          onChange={(e: SelectChangeEvent) => setHasStatesFilter(e.target.value as boolean | "")} // Function to handle changes in the hasStates filter select input
-        >
-          <MenuItem value={''}>All</MenuItem>
-          <MenuItem value={true as any}>Yes</MenuItem>
-          <MenuItem value={false as any}>No</MenuItem>
-        </Select>
-      </FormControl>
-    </Grid>
+      <Grid item>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Has State</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={hasStatesFilter as any} // Value of the hasStates filter select input
+            label="Has State"
+            style={{ minWidth: "150px" }}
+            onChange={(e: SelectChangeEvent) =>
+              setHasStatesFilter(e.target.value as boolean | "")
+            } // Function to handle changes in the hasStates filter select input
+          >
+            <MenuItem value={""}>All</MenuItem>
+            <MenuItem value={true as any}>Yes</MenuItem>
+            <MenuItem value={false as any}>No</MenuItem>
+          </Select>
+        </FormControl>
+      </Grid>
 
       <Grid item>
         <Button
